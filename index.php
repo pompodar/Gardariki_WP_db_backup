@@ -338,7 +338,7 @@ class Gardariki_WP_DB_Backup
 			wp_die('You do not have sufficient permissions to access this page.');
 		}
 
-		check_ajax_referer('run_db_backup_nonce', 'security');
+		//check_ajax_referer('run_db_backup_nonce', 'security');
 
 		$result = $this->perform_backup();
 

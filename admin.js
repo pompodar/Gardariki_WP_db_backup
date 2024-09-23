@@ -99,7 +99,6 @@ jQuery(document).ready(function ($) {
 
 	function processChunk() {
 		const spinner = $('#restore-form .spinner-gardariki-db-backup');
-
 		spinner.show();
 
 		$.ajax({
@@ -125,9 +124,6 @@ jQuery(document).ready(function ($) {
 						setTimeout(processChunk, 1000);
 					}
 				} else {
-					// errorSound.play(); // Play success sound
-
-					// spinner.hide();
 					alert('Error during restoration: ' + (response.data || 'Unknown error occurred'));
 					restoreButton.prop('disabled', false);
 					progressText.text('Restoration failed: ' + (response.data || 'Unknown error'));
