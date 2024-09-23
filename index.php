@@ -468,6 +468,12 @@ class Gardariki_WP_DB_Backup
 
 	public function process_restore_chunk()
 	{
+		set_time_limit(3000);
+		ini_set('memory_limit', '2560M');
+		ini_set('max_input_time', 3000);
+		ini_set('post_max_size', '700M');
+		ini_set('upload_max_filesize', '700M');
+
 		check_ajax_referer('gardariki_db_restore_nonce', 'nonce');
 
 		if (!current_user_can('manage_options')) {
@@ -508,6 +514,12 @@ class Gardariki_WP_DB_Backup
 
 	private function perform_restore($file_path, $position, $queries_executed)
 	{
+		set_time_limit(3000);
+		ini_set('memory_limit', '2560M');
+		ini_set('max_input_time', 3000);
+		ini_set('post_max_size', '700M');
+		ini_set('upload_max_filesize', '700M');
+
 		if (!file_exists($file_path)) {
 			return "Backup file does not exist!.";
 		}
